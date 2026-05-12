@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://22dpo0hfy7be"]
+
+[ext_resource type="Script" uid="uid://bcqv8bjw7q7xe" path="res://bullet.gd" id="1_v8qja"]
+[ext_resource type="Texture2D" uid="uid://crd8cqopc5vk3" path="res://стены/пуля.png" id="2_t4vbm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2b2rl"]
+size = Vector2(44, 40)
+
+[node name="Bullet" type="Area2D" unique_id=1763302572]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_v8qja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1331702310]
+shape = SubResource("RectangleShape2D_2b2rl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=691150633]
+scale = Vector2(0.8333333, 0.8333333)
+texture = ExtResource("2_t4vbm")

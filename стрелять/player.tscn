@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://bnyvhns514pag"]
+
+[ext_resource type="Script" uid="uid://bknknmd0556y0" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dua4hbxr682br" path="res://lvl1.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://b8ftqt5lcawc8" path="res://спрайты/стоим/sprite_0.png" id="3_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://b8wqgt4w3eupv" path="res://спрайты/стоим/sprite_1.png" id="4_nvl01"]
+[ext_resource type="Texture2D" uid="uid://dmxtdi3do53u7" path="res://спрайты/стоим/sprite_2.png" id="5_ivps1"]
+[ext_resource type="Texture2D" uid="uid://dp7sjd3iib6st" path="res://спрайты/стоим/sprite_3.png" id="6_urp6f"]
+[ext_resource type="Texture2D" uid="uid://c3jkj6xglaog8" path="res://спрайты/стоим/sprite_4.png" id="7_bwjto"]
+[ext_resource type="Texture2D" uid="uid://bev21rtm54mhe" path="res://спрайты/стоим/sprite_5.png" id="8_606se"]
+[ext_resource type="Texture2D" uid="uid://b33cnlfuy3xl2" path="res://спрайты/стоим/sprite_6.png" id="9_u1c27"]
+[ext_resource type="Texture2D" uid="uid://b1a4tymmcowt7" path="res://спрайты/стоим/sprite_7.png" id="10_op7ga"]
+[ext_resource type="Texture2D" uid="uid://dve0u5h54n4a2" path="res://спрайты/ходим/sprite_110.png" id="11_pylmc"]
+[ext_resource type="Texture2D" uid="uid://drpsqku6wf4j7" path="res://спрайты/ходим/sprite_111.png" id="12_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://dilbheh2iu1py" path="res://спрайты/ходим/sprite_112.png" id="13_5tmop"]
+[ext_resource type="Texture2D" uid="uid://bfo1b1xifnq2" path="res://спрайты/ходим/sprite_113.png" id="14_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://cg7eetgb3fj8h" path="res://спрайты/ходим/sprite_114.png" id="15_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://byn0wqydl2fa" path="res://спрайты/ходим/sprite_115.png" id="16_dx0e4"]
+[ext_resource type="Texture2D" uid="uid://bvlxa6p285gpv" path="res://спрайты/ходим/sprite_116.png" id="17_jm5j8"]
+[ext_resource type="Texture2D" uid="uid://0qxul867ngog" path="res://спрайты/ходим/sprite_117.png" id="18_7hik5"]
+[ext_resource type="Texture2D" uid="uid://be1ncnes4pa23" path="res://спрайты/ходим/sprite_118.png" id="19_qtqh7"]
+[ext_resource type="Texture2D" uid="uid://vo0t1s54cqab" path="res://стены/пистолет.png" id="21_5tmop"]
+[ext_resource type="Texture2D" uid="uid://hw2t8f3w11fx" path="res://стены/LVL1.png" id="22_7ahtn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
+size = Vector2(43, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q13i1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n7ghd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nvl01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ivps1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_urp6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bwjto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_606se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u1c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_op7ga")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_pylmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pbfsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5tmop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7ahtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7lmhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dx0e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jm5j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7hik5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qtqh7")
+}],
+"loop": true,
+"name": &"run",
+"speed": 16.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1495282498]
+script = ExtResource("1_onrkg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=147050637]
+position = Vector2(-2, 1)
+collision_layer = 3
+physics_material_override = SubResource("PhysicsMaterial_onrkg")
+
+[node name="Стена" type="Sprite2D" parent="StaticBody2D" unique_id=1864223206]
+position = Vector2(582, 328)
+texture = ExtResource("22_7ahtn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=729209308]
+light_mask = 3
+build_mode = 1
+polygon = PackedVector2Array(184, 12, 184, 436, 243, 435, 243, 11, 621, 11, 621, 425, 689, 424, 689, 7, 1152, 7, 1155, 645, 1009, 645, 1012, 238, 893, 238, 892, 645, 410, 644, 409, 121, 334, 120, 335, 648, 8, 647, 9, 9)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=985517628]
+position = Vector2(117, 57)
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1079009026]
+position = Vector2(-3.5, 8)
+shape = SubResource("RectangleShape2D_i3pqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1841102420]
+position = Vector2(-1.0000048, -3.000008)
+scale = Vector2(3.9375002, 3.6249995)
+sprite_frames = SubResource("SpriteFrames_q13i1")
+animation = &"run"
+
+[node name="GunSprite" type="Sprite2D" parent="CharacterBody2D" unique_id=670684759]
+position = Vector2(14.000002, 3.9999924)
+scale = Vector2(4.0625, 1.9375)
+texture = ExtResource("21_5tmop")
+
+[node name="Muzzle" type="Marker2D" parent="CharacterBody2D/GunSprite" unique_id=1445413249]
+position = Vector2(7.8769264, -1.0322533)
+scale = Vector2(1.0000001, 1.0000001)
